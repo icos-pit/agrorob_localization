@@ -1,0 +1,33 @@
+global:
+  ros__parameters:
+    topic_prefix: '/fb'
+
+antenna_split:
+  ros__parameters:
+    name: 'split'
+    #input_topic:
+    gps_topic: '/gps'
+    #output_topics:
+    gps_main: '/ublox_rover/fix'
+    gps_aux: '/ublox_moving_base/fix'
+    kallman_type: 1
+
+antenna_fuse:
+  ros__parameters:
+    name: 'fuse'
+    #input_topics:
+    gps_main: '/ublox_rover/fix'
+    gps_aux: '/ublox_moving_base/fix'
+    angle_gpses: 0.0
+
+gps_to_enu:
+  ros__parameters:
+    name: 'gps_to_enu'
+
+odom_n_path:
+  ros__parameters:
+    name: 'odometry'
+
+transform_pub:
+  ros__parameters:
+    name: 'transform_pub'
